@@ -32,16 +32,16 @@ There are two ways to use git to start version control:
 - Initialize a repository from existing code
 
     1. Simply run the `init` command within the directory from the terminal
-```
-$ git init [project-name]
-Creates a new local repository with the specified name
-```
+    ```
+    $ git init [project-name]
+    Creates a new local repository with the specified name
+    ```
 
     2. Create a remote repository in any remote git server, such as github, gitlab, bitbucket and so on. In order to link the local repository with the remote repository, we need to add the remote repository to the remote
-```
-$ git remote add origin [url]
-Adds a new remote named 'origin' with the specific url
-```
+    ```
+    $ git remote add origin [url]
+    Adds a new remote named 'origin' with the specific url
+    ```
 
 - Clone a remote repository
 
@@ -64,36 +64,36 @@ Adds a new remote named 'origin' with the specific url
 
 1. Make changes in the local working directory
 2. Before commit
-```
-$ git status
-Lists all new or modified files to be committed
-```
-```
-$ git diff
-Shows file differences not yet staged
-```
-```
-$ touch .gitignore
-Creates a .gitignore file that excludes files and paths 
-```
+    ```
+    $ git status
+    Lists all new or modified files to be committed
+    ```
+    ```
+    $ git diff
+    Shows file differences not yet staged
+    ```
+    ```
+    $ touch .gitignore
+    Creates a .gitignore file that excludes files and paths 
+    ```
     In `gitignore`, simply put the names of the files and folders you don't want to track. For example,
-```
-.DS_Store
-build/
-venv
-.*pyc
-```
+    ```
+    .DS_Store
+    build/
+    venv
+    .*pyc
+    ```
 
 3. Add files to staging area
-```
-$ git add -A
-Snapshots the file in preparation for versioning
-```
-...`-A` means staging all modified files. You can also specify the file name to add the specific file.
+    ```
+    $ git add -A
+    Snapshots the file in preparation for versioning
+    ```
+    `-A` means staging all modified files. You can also specify the file name to add the specific file.
 
-```
-$ git status
-```
+    ```
+    $ git status
+    ```
 
 4. Remove files from staging area
 ```
