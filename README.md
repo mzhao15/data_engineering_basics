@@ -31,13 +31,13 @@ There are two ways to use git to start version control:
 
 - Initialize a repository from existing code
 
-..1. Simply run the `init` command within the directory from the terminal
+    1. Simply run the `init` command within the directory from the terminal
 ```
 $ git init [project-name]
 Creates a new local repository with the specified name
 ```
 
-..2. Create a remote repository in any remote git server, such as github, gitlab, bitbucket and so on. In order to link the local repository with the remote repository, we need to add the remote repository to the remote
+    2. Create a remote repository in any remote git server, such as github, gitlab, bitbucket and so on. In order to link the local repository with the remote repository, we need to add the remote repository to the remote
 ```
 $ git remote add origin [url]
 Adds a new remote named 'origin' with the specific url
@@ -45,20 +45,20 @@ Adds a new remote named 'origin' with the specific url
 
 - Clone a remote repository
 
-..1. Clone a remote repository to our local working directory
-```
-$ git clone [url] [where to clone]
-Downloads a project and its entire version history
-```
+    1. Clone a remote repository to our local working directory
+    ```
+    $ git clone [url] [where to clone]
+    Downloads a project and its entire version history
+    ```
 
-..2. View information about the remote repository
-```
-$ git remote -v
-```
-```
-$ git branch -a
-Lists all branches
-```
+    2. View information about the remote repository
+    ```
+    $ git remote -v
+    ```
+    ```
+    $ git branch -a
+    Lists all branches
+    ```
 
 ## Simple git workflow
 
@@ -76,7 +76,7 @@ Shows file differences not yet staged
 $ touch .gitignore
 Creates a .gitignore file that excludes files and paths 
 ```
-...In `gitignore`, simply put the names of the files and folders you don't want to track. For example,
+    In `gitignore`, simply put the names of the files and folders you don't want to track. For example,
 ```
 .DS_Store
 build/
