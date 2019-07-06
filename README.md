@@ -172,8 +172,19 @@ Verify the branches have been successfully deleted
 git branch -a
 ```
 
+## Other useful git commands
+
+`stash` saves the current work. The repository will go back to the state without all uncommitted changes (cleaner state). Then you can make some quick changes or try some new ideas and 
+```
+git stash
+git stash pop
+```
 
 
+Undo commit
+```
+git reset 
+```
 
 
 
