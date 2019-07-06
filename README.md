@@ -24,11 +24,6 @@ $ git config --list
 ```
 List all the configuration information
 
-## Need help?
-```
-$ git help [command]   
-$ git [command] --help
-```
 
 ## Get started
 
@@ -210,6 +205,8 @@ $ git branch -a
 
 ## Other useful git commands
 
+### Save fragments
+
 `stash` saves the current work. The repository will go back to the state without all uncommitted changes (cleaner state). Then you can make some quick changes or try some new ideas. Finally you can restore the uncommitted changes. 
 ```
 $ git stash
@@ -233,7 +230,7 @@ Discards the most recently stashed changeset
 
 
 
-Undo commit
+### Undo commit
 ```
 $ git reset [commit]
 ```
@@ -244,7 +241,7 @@ $ git reset --hard [commit]
 Discards all history and changes back to the specified commit
 
 
-Review history
+### Review history
 
 ```
 $ git log
@@ -259,4 +256,19 @@ $ git show [commit]
 ```
 Outputs metadata and content changes of the specified commit
 
- 
+
+Refactor filenames
+```
+$ git rm [filename]
+Deletes the file from the working directory and stages the deletion
+```
+```
+$ git mv [file-original] [file-renamed]
+Changes the file name and prepares it for commit
+```
+
+## Need help?
+```
+$ git help [command]   
+$ git [command] --help
+``` 
