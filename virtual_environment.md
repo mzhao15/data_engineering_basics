@@ -87,14 +87,14 @@ The 'venv' module provides support for creating lightweight “virtual environme
     ```
 - View the list of all packages in a virtual environment  
 
-    When the environment is not activated:
-        ```
-        $ conda list -n myenv
-        ```
-    When the environment is activated:
-        ```
-        $ conda list
-        ```
+    When the environment is not activated:  
+    ```
+    $ conda list -n myenv
+    ```
+    When the environment is activated:  
+    ```
+    $ conda list
+    ```
 - Export your active environment to a new file:
     ```
     $ conda env export > environment.yml
