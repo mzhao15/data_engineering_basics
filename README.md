@@ -2,6 +2,12 @@
 
 This article covers the basic operations of git and help beginners start their version control of projects.
 
+
+# Table of Contents
+## Check version
+## Config git
+
+
 ## Check version
 After installation of git on your machine, you can check the version of your git in the terminal
 ```
