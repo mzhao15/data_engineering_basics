@@ -1,8 +1,8 @@
 # How to set up python virtual environment in Windows
 
-## using **VENV** module
+## using [**venv**](https://docs.python.org/3/library/venv.html) module
 
-`VENV` is a built-in module in python that sets up virtual environment. No installation is required.
+The 'venv' module provides support for creating lightweight “virtual environments” with their own site directories, optionally isolated from system site directories. Each virtual environment has its own Python binary (which matches the version of the binary that was used to create this environment) and can have its own independent set of installed Python packages in its site directories.
 
 - Create a virtual environment
     ```
@@ -42,7 +42,7 @@
 
 ## using **[`conda`](https://docs.conda.io/en/latest/)**
 
-[`Conda`](https://docs.conda.io/en/latest/) is an open source package management system and environment management system that runs on Windows, macOS and Linux. `Conda` quickly installs, runs and updates packages and their dependencies. `Conda` easily creates, saves, loads and switches between environments on your local computer. It was created for Python programs, but it can package and distribute software for any language. 
+`Conda` is an open source package management system and environment management system that runs on Windows, macOS and Linux. `Conda` quickly installs, runs and updates packages and their dependencies. `Conda` easily creates, saves, loads and switches between environments on your local computer. It was created for Python programs, but it can package and distribute software for any language. 
 
 
 - Create a virtual environment
@@ -57,11 +57,11 @@
 - Install packages
     To install a specific package such as SciPy into an existing environment `myenv`:
     ```
-    conda install --name myenv [package names]
+    $ conda install --name myenv [package names]
     ```
     If you do not specify the environment name, which in this example is done by `--name myenv`, the package installs into the current environment:
     ```
-    conda install [package names]
+    $ conda install [package names]
     ```
     To use a spec file to install its listed packages into an existing environment:
     ```
@@ -84,6 +84,7 @@
     $ conda remove --name myenv --all
     ```
 - View the list of all packages in a virtual environment:
+
     When the environment is not activated:
         ```
         $ conda list -n myenv
