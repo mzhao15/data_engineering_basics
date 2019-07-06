@@ -31,13 +31,13 @@ There are two ways to use git to start version control:
 
 - Initialize a repository from existing code
 
-    1. Simply run the `init` command within the directory from the terminal
+    Simply run the `init` command within the directory from the terminal
     ```
     $ git init [project-name]
     Creates a new local repository with the specified name
     ```
 
-    2. Create a remote repository in any remote git server, such as github, gitlab, bitbucket and so on. In order to link the local repository with the remote repository, we need to add the remote repository to the remote
+    Create a remote repository in any remote git server, such as github, gitlab, bitbucket and so on. In order to link the local repository with the remote repository, we need to add the remote repository to the remote
     ```
     $ git remote add origin [url]
     Adds a new remote named 'origin' with the specific url
@@ -45,15 +45,16 @@ There are two ways to use git to start version control:
 
 - Clone a remote repository
 
-    1. Clone a remote repository to our local working directory
+    Clone a remote repository to our local working directory
     ```
     $ git clone [url] [where to clone]
     Downloads a project and its entire version history
     ```
 
-    2. View information about the remote repository
+    View information about the remote repository
     ```
     $ git remote -v
+    Shows the information of the remote repository
     ```
     ```
     $ git branch -a
@@ -96,35 +97,35 @@ There are two ways to use git to start version control:
     ```
 
 4. Remove files from staging area
-```
-$ git reset [filename]
-Unstages the file, but preserve its contents
-```
-...If `[filename]` is omitted, git will unstage all files.
+    ```
+    $ git reset [filename]
+    Unstages the file, but preserve its contents
+    ```
+    If `[filename]` is omitted, git will unstage all files.
 
-```
-$ git status
-```
+    ```
+    $ git status
+    ```
 
 5. Commit the changes
-```
-$ git commit -m [descriptive message]
-Records file snapshots permanently in version history
-```
+    ```
+    $ git commit -m [descriptive message]
+    Records file snapshots permanently in version history
+    ```
 
-Commit message needs to be detailed and concise. You can also use `git log` to show the details of the commit.
+    Commit message needs to be detailed and concise. You can also use `git log` to show the details of the commit.
 
 6. Push changes
-```
-$ git pull origin master
-Fetches new commits from the remote master branch and merge with the current working branch
-```
-```
-$ git push origin master
-Pushes the new commits from the current working branch to the remote master branch
-```
+    ```
+    $ git pull origin master
+    Fetches new commits from the remote master branch and merge with the current working branch
+    ```
+    ```
+    $ git push origin master
+    Pushes the new commits from the current working branch to the remote master branch
+    ```
 
-`origin` is the name/alias of the `remote` repository. `master` is the name of the `remote branch`. *Always `pull` first before you `push` changes to the remote* because your collaborators may have made changes to the remote repository and you want to make sure your local repository is up-to-date. Otherwise, you may produce conflicts when you `push`.
+    `origin` is the name/alias of the `remote` repository. `master` is the name of the `remote branch`. *Always `pull` first before you `push` changes to the remote* because your collaborators may have made changes to the remote repository and you want to make sure your local repository is up-to-date. Otherwise, you may produce conflicts when you `push`.
 
 
 A quick recap of how git works:
@@ -140,66 +141,66 @@ $ git push origin master
 ## Common git workflow in a project
 1. Create a branch for desired feature
 
-In the local directory, 
-```
-$ git branch demo
-Creates a new branch called 'demo'
-```
-You can view all local branches by `git branch`. You can also view all branches by `git branch -a`. 
+    In the local directory, 
+    ```
+    $ git branch demo
+    Creates a new branch called 'demo'
+    ```
+    You can view all local branches by `git branch`. You can also view all branches by `git branch -a`. 
 
 2. Switch to the `demo` branch
-```
-$ git checkout demo
-Switches to the 'demo' branch and uptes the working directory
-```
+    ```
+    $ git checkout demo
+    Switches to the 'demo' branch and uptes the working directory
+    ```
 
 3. Make changes in the `demo` branch and `commit` changes to the local `demo` branch
 
 4. After commit, push branch to `remote`
-```
-$ git push -u origin demo
-```
-Now we create a new branch in the remote repository. Our collaborators can perform unittesting or code review using the `remote demo` branch before we `merge` branches. `-u` sets up the `-upstream` for git so that in future, when we `push` or `pull`, we don't need to specify the name of the remote repo and branch. Simply use `git pull` and `git push`.
+    ```
+    $ git push -u origin demo
+    ```
+    Now we create a new branch in the remote repository. Our collaborators can perform unittesting or code review using the `remote demo` branch before we `merge` branches. `-u` sets up the `-upstream` for git so that in future, when we `push` or `pull`, we don't need to specify the name of the remote repo and branch. Simply use `git pull` and `git push`.
 
 5. Merge a branch
 
-We make sure our changes work well and need to merge our working branch with the master branch. First, switch to the local master branch
-```
-$ git checkout master
-```
-Make sure the master branch is up-to-date
-```
-$ git pull origin master
-```
-Check if the branch has been merged or not
-```
-$ git branch --merged
-```
-If not, merge the branch with the current branch (local master)
-```
-$ git merge demo
-Combines the specified branch's history into the current branch
-```
-At the end, push our local master to the remote repository
-```
-$ git push origin master
-```
+    We make sure our changes work well and need to merge our working branch with the master branch. First, switch to the local master branch
+    ```
+    $ git checkout master
+    ```
+    Make sure the master branch is up-to-date
+    ```
+    $ git pull origin master
+    ```
+    Check if the branch has been merged or not
+    ```
+    $ git branch --merged
+    ```
+    If not, merge the branch with the current branch (local master)
+    ```
+    $ git merge demo
+    Combines the specified branch's history into the current branch
+    ```
+    At the end, push our local master to the remote repository
+    ```
+    $ git push origin master
+    ```
 
 6. Delete a branch
 
-Delete the local `demo` branch
-```
-$ git branch -d demo
-Deletes the specified branch ('demo')
-```
-```
-$ git push origin --delete demo
-Delete the remote `demo` branch
-```
-Verify the branches have been successfully deleted
-```
-$ git branch -a
-```
+    Delete the local `demo` branch
+    ```
+    $ git branch -d demo
+    Deletes the specified branch ('demo')
+    ```
+    ```
+    $ git push origin --delete demo
+    Delete the remote `demo` branch
+    ```
+    Verify the branches have been successfully deleted
+    ```
+    $ git branch -a
+    ```
 
 ## Other useful git commands
 
