@@ -181,7 +181,7 @@ $ git push origin master
     $ git merge demo
     Combines the specified branch's history into the current branch
     ```
-    At the end, push our local master to the remote repository
+    At the end, push the local master branch to the remote repository
     ```
     $ git push origin master
     ```
@@ -215,12 +215,8 @@ do/fix something quickly
 ```
 $ git stash pop
 Restores the most recently stashed files
-```
-```
 $ git stash list
 Lists all stashed changesets
-```
-```
 $ git stash drop
 Discards the most recently stashed changeset
 ```
