@@ -10,16 +10,12 @@ $ git --version
 
 ## Config git
 
-Confiure user information for all local repositories
+Configure user information for all local repositories
 ```
 $ git config --global user.name [name]
 Sets the name attached to your commit transactions
-```
-```
 $ git config --global user.email [email]
 Sets the email attached to your commit transactions
-```
-```
 $ git config --list
 Lists all the configuration information
 ```
@@ -37,7 +33,7 @@ There are two ways to use git to start version control:
     Creates a new local repository with the specified name
     ```
 
-    Create a remote repository in any remote git server, such as github, gitlab, bitbucket and so on. In order to link the local repository with the remote repository, we need to add the remote repository to the remote
+    Then create a remote repository in any git server, such as github, gitlab, bitbucket and so on. In order to link the local repository with the remote repository, add the new remote repository
     ```
     $ git remote add origin [url]
     Adds a new remote named 'origin' with the specific url
@@ -55,8 +51,6 @@ There are two ways to use git to start version control:
     ```
     $ git remote -v
     Shows the information of the remote repository
-    ```
-    ```
     $ git branch -a
     Lists all branches
     ```
@@ -68,16 +62,12 @@ There are two ways to use git to start version control:
     ```
     $ git status
     Lists all new or modified files to be committed
-    ```
-    ```
     $ git diff
     Shows file differences not yet staged
-    ```
-    ```
     $ touch .gitignore
     Creates a .gitignore file that excludes files and paths 
     ```
-    In `gitignore`, simply put the names of the files and folders you don't want to track. For example,
+    In `.gitignore`, add the names of the files and folders you don't want to track. For example,
     ```
     .DS_Store
     build/
@@ -99,7 +89,7 @@ There are two ways to use git to start version control:
 4. Remove files from staging area
     ```
     $ git reset [filename]
-    Unstages the file, but preserve its contents
+    Unstages the file, but preserves its contents
     ```
     If `[filename]` is omitted, git will unstage all files.
 
@@ -113,22 +103,20 @@ There are two ways to use git to start version control:
     Records file snapshots permanently in version history
     ```
 
-    Commit message needs to be detailed and concise. You can also use `git log` to show the details of the commit.
+    Commit messages need to be detailed and concise. You can also use `git log` to show the details of commit history.
 
 6. Push changes
     ```
     $ git pull origin master
-    Fetches new commits from the remote master branch and merge with the current working branch
-    ```
-    ```
+    Fetches new commits from the remote master branch and merges with the current working branch
     $ git push origin master
     Pushes the new commits from the current working branch to the remote master branch
     ```
 
-    `origin` is the name/alias of the `remote` repository. `master` is the name of the `remote branch`. *Always `pull` first before you `push` changes to the remote* because your collaborators may have made changes to the remote repository and you want to make sure your local repository is up-to-date. Otherwise, you may produce conflicts when you `push`.
+    `origin` is the name/alias of the `remote` repository. `master` is the name of the `remote` branch. __*Always `pull` first before `push` changes to the remote*__ because your collaborators may have made changes to the remote repository and you want to make sure your local repository is up-to-date. Otherwise, you may produce conflicts when you `push`.
 
 
-A quick recap of how git works:
+A quick recap of git workflow:
 ```
 $ git diff
 $ git status
@@ -151,20 +139,20 @@ $ git push origin master
 2. Switch to the `demo` branch
     ```
     $ git checkout demo
-    Switches to the 'demo' branch and uptes the working directory
+    Switches to the 'demo' branch and updates the working directory
     ```
 
 3. Make changes in the `demo` branch and `commit` changes to the local `demo` branch
 
-4. After commit, push branch to `remote`
+4. After commit, push branch to `remote` repository
     ```
     $ git push -u origin demo
     ```
-    Now we create a new branch in the remote repository. Our collaborators can perform unittesting or code review using the `remote demo` branch before we `merge` branches. `-u` sets up the `-upstream` for git so that in future, when we `push` or `pull`, we don't need to specify the name of the remote repo and branch. Simply use `git pull` and `git push`.
+    Now we created a new branch in the remote repository. Our collaborators can perform unittesting or code review in the `remote demo` branch before we `merge` branches. `-u` sets up the `-upstream` for git so that in future, when we `push` or `pull`, we don't need to specify the name of the remote repo and branch. Simply use `git pull` and `git push`.
 
 5. Merge a branch
 
-    We make sure our changes work well and need to merge our working branch with the master branch. First, switch to the local master branch
+    After we make sure our changes work well, we can merge our working branch into the master branch. First, switch to the local master branch
     ```
     $ git checkout master
     ```
@@ -187,17 +175,14 @@ $ git push origin master
     ```
 
 6. Delete a branch
-
-    Delete the local `demo` branch
+    Delete both the local branch and remote branch
     ```
     $ git branch -d demo
-    Deletes the specified branch ('demo')
-    ```
-    ```
+    Deletes the specified local branch ('demo')
     $ git push origin --delete demo
-    Delete the remote `demo` branch
+    Deletes the remote `demo` branch
     ```
-    Verify the branches have been successfully deleted
+    Verify both branches have been successfully deleted
     ```
     $ git branch -a
     ```
@@ -206,7 +191,7 @@ $ git push origin master
 
 ### Save fragments
 
-`stash` saves the current work. The repository will go back to the state without all uncommitted changes (cleaner state). Then you can make some quick changes or try some new ideas. Finally you can restore the uncommitted changes. 
+`stash` saves the current work. The repository will go back to the state without the uncommitted changes (cleaner state). Then you can make some quick changes or try some new ideas. Finally you can restore the uncommitted changes. 
 ```
 $ git stash
 Temporarily stores all modified tracked files
@@ -215,6 +200,9 @@ do/fix something quickly
 ```
 $ git stash pop
 Restores the most recently stashed files
+```
+Other `stash` commands:
+```
 $ git stash list
 Lists all stashed changesets
 $ git stash drop
@@ -225,8 +213,6 @@ Discards the most recently stashed changeset
 ```
 $ git reset [commit]
 Undoes all commits after [commit], preserving changes locally
-```
-```
 $ git reset --hard [commit]
 Discards all history and changes back to the specified commit
 ```
@@ -236,12 +222,8 @@ Discards all history and changes back to the specified commit
 ```
 $ git log
 Lists version history for the current branch
-```
-```
 $ git diff [first-branch]...[second-branch]
 Shows content diffences between two branches
-```
-```
 $ git show [commit]
 Outputs metadata and content changes of the specified commit
 ```
@@ -250,8 +232,6 @@ Outputs metadata and content changes of the specified commit
 ```
 $ git rm [filename]
 Deletes the file from the working directory and stages the deletion
-```
-```
 $ git mv [file-original] [file-renamed]
 Changes the file name and prepares it for commit
 ```
