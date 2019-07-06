@@ -54,7 +54,8 @@ The 'venv' module provides support for creating lightweight “virtual environme
     ```
     $ conda create --name myenv --file spec-file.txt
     ```
-- Install packages
+- Install packages...
+
     To install a specific package such as SciPy into an existing environment `myenv`:
     ```
     $ conda install --name myenv [package names]
